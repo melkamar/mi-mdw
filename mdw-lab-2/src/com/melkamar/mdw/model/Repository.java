@@ -7,12 +7,12 @@ import weblogic.rmi.extensions.NotImplementedException;
 
 public class Repository {
 	private static List<Booking> bookings;
-	private static List<Person> persons;
+	//private static List<Person> persons;
 	private static List<Trip> trips;
 	
 	static {
 		bookings = new ArrayList<>();
-		persons = new ArrayList<>();
+		//persons = new ArrayList<>();
 		trips = new ArrayList<>();
 
 		for (int i=1; i<20; i++){
@@ -37,17 +37,6 @@ public class Repository {
 	
 	public static void saveBooking(Booking booking){
 		bookings.add(booking);
-	}
-	
-	
-	
-	
-	public static List<Person> getPersons(){
-		throw new NotImplementedException();
-	}
-	
-	public static void savePerson(Person person){
-		throw new NotImplementedException();
 	}
 	
 	

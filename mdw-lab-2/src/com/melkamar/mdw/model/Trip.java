@@ -1,9 +1,10 @@
 package com.melkamar.mdw.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Trip {
+public class Trip implements Serializable {
 	private String title;
 	private int capacity;
 	//private List<Booking> bookings;
