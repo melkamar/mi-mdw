@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mdw.melka.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mdw.melka.com" xmlns:intf="http://mdw.melka.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://mdw.melka.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="listBookings">
+    <complexType/>
+   </element>
+   <element name="listBookingsResponse">
+    <complexType>
+     <sequence>
+      <element name="listBookingsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addBooking">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+      <element name="from" type="xsd:string"/>
+      <element name="to" type="xsd:string"/>
+      <element name="departureTime" type="xsd:string"/>
+      <element name="arrivalTime" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addBookingResponse">
+    <complexType>
+     <sequence>
+      <element name="addBookingReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addBookingRequest">
+
+      <wsdl:part element="impl:addBooking" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addBookingResponse">
+
+      <wsdl:part element="impl:addBookingResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listBookingsRequest">
+
+      <wsdl:part element="impl:listBookings" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listBookingsResponse">
+
+      <wsdl:part element="impl:listBookingsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="BookingService">
+
+      <wsdl:operation name="listBookings">
+
+         <wsdl:input message="impl:listBookingsRequest" name="listBookingsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:listBookingsResponse" name="listBookingsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addBooking">
+
+         <wsdl:input message="impl:addBookingRequest" name="addBookingRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addBookingResponse" name="addBookingResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="BookingServiceSoapBinding" type="impl:BookingService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="listBookings">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="listBookingsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="listBookingsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addBooking">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addBookingRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addBookingResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="BookingServiceService">
+
+      <wsdl:port binding="impl:BookingServiceSoapBinding" name="BookingService">
+
+         <wsdlsoap:address location="http://localhost:7001/7/services/BookingService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
