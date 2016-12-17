@@ -9,6 +9,10 @@ public class Booking {
 		this.trip = trip;
 	}
 	
+	public Booking(){
+		
+	}
+	
 	public Trip getTrip(){
 		return this.trip;
 	}

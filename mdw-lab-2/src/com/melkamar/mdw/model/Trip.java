@@ -15,6 +15,10 @@ public class Trip implements Serializable {
 		//bookings = new ArrayList<Booking>();
 	}
 	
+	public Trip(){
+		
+	}
+	
 	public String getTitle(){
 		return this.title;
 	}
